@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/css/stil.css">
+    <title>Coğrafi Koordinatı Bul</title>
+</head>
+<body>
+
+
+
+<fieldset class="icerik">
+    <h2 class="baslik">Coğrafi Koordinatları Bul</h2>
+    <div  class="kutular">
+        <a href="#"><div class="kutu" id="koordinatSorgula"><span>Adresi yazarak koordinatları öğren</span></div></a>
+        <a href="#" style="float: right;"><div class="kutu" id="dosyaSorgula"><span>CSV dosyasını yükleyerek koordinatları öğren</span></div></a>
+    </div>
+
+        <form action="{{url_for('islem') }}" method="post" class="islem form1" {% if durum==1 %} style="display: block" {% endif %}>
+            <input type="text" name="adres" placeholder="Bir adres giriniz" >
+            <button class="btn" type="submit"><span>Koordinatları Getir </span></button>
+            <div class="uyari">{{ uyari | safe }}</div>
+        </form>
+        <form action="{{url_for('upload') }}" method="post" class="islem form2" {% if durum==2 %} style="display: block" {% endif %} enctype="multipart/form-data" >
+            <input type="file" name="dosya" accept=".csv" placeholder="Bir adres giriniz" >
+            <button class="btn" type="submit"><span>Koordinatları Getir </span></button>
+            <div class="uyari">{{ uyari | safe }}</div>
+        </form>
+         <div class="koordinatSonuc">{{ koordinat | safe }}</div>
+
+       {% include indirmebaglantisi ignore missing %}
+
+</fieldset>
+
+
+
+</body>
+</html>
+
+<script src="../static/js/jq.js"></script>
+<script>
+
+  $(document).ready(function () {
+
+      $("#koordinatSorgula").click(function () {
+          $(".form2").slideUp(300)
+          $(".form1").slideToggle(300)
+      })
+      $("#dosyaSorgula").click(function () {
+
+          $(".form1").slideUp(300)
+          $(".form2").slideToggle(300)
+      })
+
+      $(".kutu").click(function () {
+          $(".uyari").text("")
+      })
+  })
+
+</script>
