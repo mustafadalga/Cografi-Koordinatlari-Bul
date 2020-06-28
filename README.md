@@ -1,15 +1,16 @@
 # Cografi Koordinatlari Bul
-Csv dosyası yüklenerek ya da adres yazılarak ,bu adreslerin coğrafi konumlarını(Enlem,Boylam) bulan, Python'un geopy modülü kullanılarak kodlanmış bir uygulamadır.
 
-### uygulama linki:https://cografibilgi.herokuapp.com
+## Açıklama
+**Csv dosyası yüklenerek ya da adres yazılarak ,bu adreslerin coğrafi konumlarını(Enlem,Boylam) bulan, Python'un geopy modülü kullanılarak kodlanmış bir uygulamadır.**
 
 
-Csv dosyası yüklendiğinde,aşağıdaki örnek dosyada olduğu gibi bir yapı kullanılmalıdır.  
-Csv dosyasının içerisinden Adres sutunu çekilerek coğrafi konum bilgileri aranmaktadır. 
+* Csv dosyası yüklendiğinde,aşağıdaki örnek dosyada olduğu gibi bir yapı kullanılmalıdır.  
+* Csv dosyasının içerisinden Adres sutunu çekilerek coğrafi konum bilgileri aranmaktadır. 
 
 ![ornekdosya](https://user-images.githubusercontent.com/25087769/52602754-d966fc80-2e74-11e9-8737-b7eb47f5efd7.PNG)
 
-
+### Online Demo
+* [Cografi Koordinatlari Bul](https://cografibilgi.herokuapp.com)
 
 
 ### Uygulama Görüntüsü - 1
